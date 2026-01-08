@@ -2,7 +2,8 @@ import { createClient } from "@/utils/supabase/server"
 import { SuccessPopup } from "@/components/home/SuccessPopup"
 import { ErrorPopup } from "@/components/home/ErrorPopup"
 import { RoomsGrid } from "@/components/home/RoomsGrid"
-import { HomeHeader } from "@/components/home/HomeHeader" // 👈 Import du nouveau composant
+import { HomeHeader } from "@/components/home/HomeHeader"
+import { NewsFeed } from "@/components/home/NewsFeed"
 
 export default async function Home({
   searchParams,
@@ -25,7 +26,9 @@ await new Promise((resolve) => setTimeout(resolve, 1000));
       <div className="max-w-6xl mx-auto p-8">
         {/* Header avec Titre + Bouton Ajouter */}
         <HomeHeader count={rooms?.length || 0} />
-
+        <section className="mb-8">
+            <NewsFeed />
+        </section>
         {/* Grille des salles */}
         <section>
           <RoomsGrid rooms={rooms ?? undefined} />
