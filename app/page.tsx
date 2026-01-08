@@ -12,7 +12,7 @@ export default async function Home({
   const params = await searchParams
   const showSuccessPopup = params.bookingSuccess === "true"
   const errorMessage = params.error
-
+await new Promise((resolve) => setTimeout(resolve, 1000));
   const supabase = await createClient()
   const { data: rooms } = await supabase.from("rooms").select("*").order("id")
 
