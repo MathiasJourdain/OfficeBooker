@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 
-// C'est ça le "Mock" : des données en dur, pas de base de données
 const MOCK_FEED = [
   {
     id: 1,
@@ -12,7 +11,7 @@ const MOCK_FEED = [
   {
     id: 2,
     author: "Happiness Manager",
-    content: "🎉 Afterwork prévu ce jeudi soir dans la salle Jeff Bezos !",
+    content: "🎉 Afterwork prévu ce jeudi soir dans l'Open Space !",
     date: "Il y a 2 heures",
     type: "info"
   },
