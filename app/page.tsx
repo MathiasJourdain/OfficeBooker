@@ -1,9 +1,9 @@
 import { createClient } from "@/utils/supabase/server"
 import { SuccessPopup } from "@/components/home/SuccessPopup"
 import { ErrorPopup } from "@/components/home/ErrorPopup"
-import { RoomsGrid } from "@/components/home/RoomsGrid"
 import { HomeHeader } from "@/components/home/HomeHeader"
 import { NewsFeed } from "@/components/home/NewsFeed"
+import { FilteredRoomList } from "@/components/home/FilteredRoomList"
 
 export default async function Home({
   searchParams,
@@ -13,25 +13,24 @@ export default async function Home({
   const params = await searchParams
   const showSuccessPopup = params.bookingSuccess === "true"
   const errorMessage = params.error
-await new Promise((resolve) => setTimeout(resolve, 1000));
+
   const supabase = await createClient()
-  const { data: rooms } = await supabase.from("rooms").select("*").order("id")
+  const { count } = await supabase.from("rooms").select("*", { count: 'exact', head: true })
 
   return (
     <main className="min-h-screen bg-gray-50">
-      {/* Popups de notification */}
       {showSuccessPopup && <SuccessPopup />}
       {errorMessage && <ErrorPopup message={errorMessage} />}
 
       <div className="max-w-6xl mx-auto p-8">
-        {/* Header avec Titre + Bouton Ajouter */}
-        <HomeHeader count={rooms?.length || 0} />
+        <HomeHeader count={count || 0} />
+
         <section className="mb-8">
             <NewsFeed />
         </section>
-        {/* Grille des salles */}
+
         <section>
-          <RoomsGrid rooms={rooms ?? undefined} />
+          <FilteredRoomList />
         </section>
       </div>
     </main>
