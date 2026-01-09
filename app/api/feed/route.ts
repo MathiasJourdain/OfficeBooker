@@ -25,7 +25,6 @@ const MOCK_FEED = [
 ];
 
 export async function GET() {
-  // On simule un petit délai réseau pour faire réaliste (optionnel)
   await new Promise((resolve) => setTimeout(resolve, 1000));
   
   return NextResponse.json(MOCK_FEED);

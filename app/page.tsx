@@ -1,4 +1,3 @@
-import { createClient } from "@/utils/supabase/server"
 import { SuccessPopup } from "@/components/home/SuccessPopup"
 import { ErrorPopup } from "@/components/home/ErrorPopup"
 import { HomeHeader } from "@/components/home/HomeHeader"
@@ -14,16 +13,13 @@ export default async function Home({
   const showSuccessPopup = params.bookingSuccess === "true"
   const errorMessage = params.error
 
-  const supabase = await createClient()
-  const { count } = await supabase.from("rooms").select("*", { count: 'exact', head: true })
-
   return (
     <main className="min-h-screen bg-gray-50">
       {showSuccessPopup && <SuccessPopup />}
       {errorMessage && <ErrorPopup message={errorMessage} />}
 
       <div className="max-w-6xl mx-auto p-8">
-        <HomeHeader count={count || 0} />
+        <HomeHeader />
 
         <section className="mb-8">
             <NewsFeed />

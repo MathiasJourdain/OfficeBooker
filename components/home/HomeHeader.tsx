@@ -2,11 +2,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
 
-interface HomeHeaderProps {
-  count: number
-}
-
-export function HomeHeader({ count }: HomeHeaderProps) {
+export function HomeHeader() {
   return (
     <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-4 border-b pb-4">
       <div>
@@ -15,11 +11,6 @@ export function HomeHeader({ count }: HomeHeaderProps) {
       </div>
 
       <div className="flex items-center gap-3">
-        {/* Compteur de salles */}
-        <span className="text-sm font-medium bg-gray-200 px-3 py-1 rounded-full text-gray-700">
-          {count} salles disponibles
-        </span>
-
         {/* Bouton Ajouter */}
         <Link href="/rooms/add">
           <Button size="sm" className="bg-slate-900 text-white gap-2 hover:bg-slate-800">
