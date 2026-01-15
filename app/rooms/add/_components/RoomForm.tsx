@@ -11,7 +11,14 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 
 export function RoomForm() {
   const router = useRouter()
-  const { register, handleSubmit, formState: { errors } } = useRoomForm()
+
+  const form = useRoomForm()
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = form
+
   const { mutate: postRoom, isPending, isError, error } = usePostRoomMutation()
 
   const onSubmit: SubmitHandler<RoomFormFields> = (data) => {
@@ -69,18 +76,14 @@ export function RoomForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="equipment">
-              Équipements (séparés par des virgules)
-            </Label>
+            <Label htmlFor="equipment">Équipements (séparés par des virgules)</Label>
             <Input
               id="equipment"
               type="text"
               placeholder="Ex: Projecteur, Tableau blanc, Wifi"
               {...register("equipment")}
             />
-            <p className="text-gray-500 text-xs">
-              Séparez les équipements par des virgules
-            </p>
+            <p className="text-gray-500 text-xs">Séparez les équipements par des virgules</p>
             {errors.equipment && (
               <p className="text-red-500 text-sm">{errors.equipment.message}</p>
             )}

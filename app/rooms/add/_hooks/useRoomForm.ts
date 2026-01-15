@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form"
+import { useForm, UseFormReturn } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
 
@@ -17,7 +17,7 @@ const RoomFormSchema = z.object({
 export type RoomFormFields = z.infer<typeof RoomFormSchema>
 
 // Hook custom pour le formulaire
-export function useRoomForm() {
+export function useRoomForm(): UseFormReturn<RoomFormFields> {
   return useForm<RoomFormFields>({
     resolver: zodResolver(RoomFormSchema),
     defaultValues: {
