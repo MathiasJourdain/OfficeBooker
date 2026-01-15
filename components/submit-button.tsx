@@ -18,7 +18,7 @@ export function SubmitButton({ children, pendingText, ...props }: Props) {
       type="submit" 
       aria-disabled={pending} 
       disabled={pending} 
-      {...props} // 👈 Ici, props ne contient PLUS pendingText, donc pas d'erreur !
+      {...props} 
     >
       {pending && pendingText ? pendingText : children}
     </Button>
