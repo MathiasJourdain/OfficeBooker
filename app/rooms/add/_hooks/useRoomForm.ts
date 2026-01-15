@@ -14,11 +14,16 @@ const RoomFormSchema = z.object({
 })
 
 // Type des champs du formulaire
-export type RoomFormFields = z.infer<typeof RoomFormSchema>
+// - input  : forme "avant parsing" (ce que reçoit le resolver)
+// - output : forme "après parsing" (ce qu'on veut utiliser dans onSubmit)
+export type RoomFormInput = z.input<typeof RoomFormSchema>
+export type RoomFormFields = z.output<typeof RoomFormSchema>
 
 // Hook custom pour le formulaire
 export function useRoomForm() {
-  return useForm<RoomFormFields>({
+  // 1er générique : valeurs "input" (avant parsing)
+  // 3e générique : valeurs "output" (après parsing Zod)
+  return useForm<RoomFormInput, any, RoomFormFields>({
     resolver: zodResolver(RoomFormSchema),
     defaultValues: {
       name: "",
