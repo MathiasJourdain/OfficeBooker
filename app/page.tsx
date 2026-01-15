@@ -19,7 +19,7 @@ export default async function Home({
       {errorMessage && <ErrorPopup message={errorMessage} />}
 
       <div className="max-w-6xl mx-auto p-8">
-        <HomeHeader />
+        <HomeHeader/>
         
         <section className="mb-8">
             <NewsFeed />
