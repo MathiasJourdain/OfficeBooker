@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { ErrorBoundary } from "@/app/_components/ErrorBoundary"
 import { BookingsList } from "./_components/BookingsList"
 import { BookingsListFallback } from "./_components/BookingsListFallback"
 
@@ -23,9 +24,11 @@ export default async function MyBookingsPage({ searchParams }: { searchParams: P
           </div>
         )}
 
-        <Suspense fallback={<BookingsListFallback />}>
-          <BookingsList />
-        </Suspense>
+        <ErrorBoundary title="Erreur lors du chargement des réservations">
+          <Suspense fallback={<BookingsListFallback />}>
+            <BookingsList />
+          </Suspense>
+        </ErrorBoundary>
       </div>
     </div>
   )
