@@ -31,14 +31,23 @@ test('Parcours complet de réservation avec authentification forcée', async ({ 
   });
 
   await test.step('5. Connexion de l\'utilisateur', async () => {
+    await page.waitForSelector('input[name="email"]', { state: 'visible' });
+    
     await page.fill('input[name="email"]', TEST_USER.email); 
     await page.fill('input[name="password"]', TEST_USER.password);
 
     await page.click('button:has-text("Se connecter")');
     
-    const errorMessage = page.locator('.text-red-500, [role="alert"]');
-    if (await errorMessage.isVisible()) {
-      throw new Error(`Échec de la connexion : ${await errorMessage.innerText()}`);
+    try {
+      await expect(page).not.toHaveURL(/.*login/, { timeout: 5000 });
+    } catch (e) {
+      const alert = page.getByRole('alert'); 
+      if (await alert.isVisible()) {
+        const text = await alert.innerText();
+        throw new Error(`🛑 Connexion refusée par le site. Message : "${text}"`);
+      } else {
+        throw new Error(`🛑 Le site est resté bloqué sur /login sans message d'erreur visible.`);
+      }
     }
   });
 
