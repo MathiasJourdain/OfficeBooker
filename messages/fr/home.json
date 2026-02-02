@@ -1,0 +1,17 @@
+{
+  "searchRoom": "Rechercher une salle",
+  "minCapacity": "Capacité Min.",
+  "noRoomsFound": "Aucune salle trouvée.",
+  "roomsFound": "{count} salle(s) correspondent à vos critères.",
+  "loadingError": "Erreur lors du chargement des salles.",
+  "imageNotAvailable": "Image non disponible",
+  "viewSchedule": "Voir le planning & Réserver",
+  "latestNews": "Dernières infos du bureau",
+  "feedError": "Impossible de charger les actus.",
+  "errorTitle": "Oups, problème !",
+  "errorButton": "J'ai compris",
+  "successTitle": "Réservation confirmée !",
+  "successMessage": "Votre créneau a bien été enregistré.",
+  "close": "Fermer",
+  "viewBookings": "Voir mes réservations"
+}

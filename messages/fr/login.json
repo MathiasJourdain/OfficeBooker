@@ -1,0 +1,17 @@
+{
+  "login": "Connexion",
+  "signup": "Inscription",
+  "error": "Erreur",
+  "loginTitle": "Bon retour parmi nous 👋",
+  "loginDescription": "Connectez-vous pour gérer vos réservations.",
+  "email": "Email",
+  "password": "Mot de passe",
+  "emailPlaceholder": "exemple@boite.com",
+  "connect": "Se connecter",
+  "signupTitle": "Créer un compte 🚀",
+  "signupDescription": "Rejoignez OfficeBooker en quelques secondes.",
+  "fullName": "Nom complet",
+  "fullNamePlaceholder": "Jean Dupont",
+  "passwordPlaceholder": "Min. 6 caractères",
+  "register": "S'inscrire"
+}

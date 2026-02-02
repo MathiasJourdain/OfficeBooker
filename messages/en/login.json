@@ -1,0 +1,17 @@
+{
+  "login": "Login",
+  "signup": "Sign up",
+  "error": "Error",
+  "loginTitle": "Welcome back 👋",
+  "loginDescription": "Sign in to manage your bookings.",
+  "email": "Email",
+  "password": "Password",
+  "emailPlaceholder": "example@company.com",
+  "connect": "Sign in",
+  "signupTitle": "Create an account 🚀",
+  "signupDescription": "Join OfficeBooker in seconds.",
+  "fullName": "Full name",
+  "fullNamePlaceholder": "John Doe",
+  "passwordPlaceholder": "Min. 6 characters",
+  "register": "Sign up"
+}

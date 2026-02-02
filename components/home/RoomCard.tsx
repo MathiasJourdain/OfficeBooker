@@ -1,11 +1,15 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { useTranslations } from "next-intl"
 
 export function RoomCard({ room }: { room: any }) {
+  const t = useTranslations("home")
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col group">
       <div className="relative h-56 bg-gray-100 overflow-hidden">
-        {room.image_url ? <img src={room.image_url} alt={room.name} className="object-cover w-full h-full" /> : <div className="flex items-center justify-center h-full text-gray-400">Image non disponible</div>}
+        {room.image_url ? <img src={room.image_url} alt={room.name} className="object-cover w-full h-full" /> : <div className="flex items-center justify-center h-full text-gray-400">{t("imageNotAvailable")}</div>}
         <div className="absolute top-3 right-3 bg-white/95 px-3 py-1.5 rounded-lg text-xs font-bold text-gray-800">👥 {room.capacity}</div>
       </div>
       <div className="p-6 flex-1 flex flex-col">
@@ -15,7 +19,7 @@ export function RoomCard({ room }: { room: any }) {
         </div>
         <div className="mt-auto pt-4 border-t border-gray-50">
           <Link href={`/rooms/${room.id}`} className="w-full block">
-            <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white">Voir le planning & Réserver</Button>
+            <Button className="w-full bg-slate-900 hover:bg-slate-800 text-white">{t("viewSchedule")}</Button>
           </Link>
         </div>
       </div>

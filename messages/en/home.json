@@ -1,0 +1,17 @@
+{
+  "searchRoom": "Search a room",
+  "minCapacity": "Min. Capacity",
+  "noRoomsFound": "No rooms found.",
+  "roomsFound": "{count} room(s) match your criteria.",
+  "loadingError": "Error loading rooms.",
+  "imageNotAvailable": "Image not available",
+  "viewSchedule": "View schedule & Book",
+  "latestNews": "Latest office news",
+  "feedError": "Unable to load news.",
+  "errorTitle": "Oops, problem!",
+  "errorButton": "Got it",
+  "successTitle": "Booking confirmed!",
+  "successMessage": "Your time slot has been registered.",
+  "close": "Close",
+  "viewBookings": "View my bookings"
+}

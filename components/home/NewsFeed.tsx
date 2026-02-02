@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { Bell, Info, AlertTriangle } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
+import { useTranslations } from "next-intl"
 
 // 1. La fonction qui va chercher les données sur ton API
 const fetchFeed = async () => {
@@ -12,6 +13,8 @@ const fetchFeed = async () => {
 }
 
 export function NewsFeed() {
+  const t = useTranslations("home")
+  
   // 2. Utilisation de TanStack Query
   const { data: feed, isLoading, isError } = useQuery({
     queryKey: ["feed"], // Clé unique pour le cache
@@ -19,13 +22,13 @@ export function NewsFeed() {
   })
 
   if (isLoading) return <NewsFeedSkeleton />
-  if (isError) return <div className="text-red-500 text-sm">Impossible de charger les actus.</div>
+  if (isError) return <div className="text-red-500 text-sm">{t("feedError")}</div>
 
   return (
     <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-6 mb-8">
       <h2 className="text-lg font-bold text-gray-900 mb-4 flex items-center gap-2">
         <Bell className="w-5 h-5 text-blue-600" />
-        Dernières infos du bureau
+        {t("latestNews")}
       </h2>
       
       <div className="space-y-4">

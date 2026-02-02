@@ -2,6 +2,10 @@
   "title": "Mes Réservations",
   "newBooking": "Nouvelle réservation",
   "noBookings": "Vous n'avez aucune réservation.",
+  "noUpcomingBookings": "Vous n'avez aucune réservation à venir.",
+  "bookRoom": "Réserver une salle",
   "cancel": "Annuler",
-  "success": "Votre réservation a été confirmée avec succès !"
+  "success": "Votre réservation a été confirmée avec succès !",
+  "unknownRoom": "Salle inconnue",
+  "noImage": "Pas d'image"
 }

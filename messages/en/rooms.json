@@ -1,0 +1,7 @@
+{
+  "bookSlot": "Book a time slot",
+  "start": "Start",
+  "end": "End",
+  "confirmBooking": "Confirm booking",
+  "loadingError": "Error loading room"
+}

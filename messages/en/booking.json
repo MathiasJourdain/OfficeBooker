@@ -2,6 +2,10 @@
   "title": "My Bookings",
   "newBooking": "New booking",
   "noBookings": "You have no bookings.",
+  "noUpcomingBookings": "You have no upcoming bookings.",
+  "bookRoom": "Book a room",
   "cancel": "Cancel",
-  "success": "Your booking has been confirmed successfully!"
+  "success": "Your booking has been confirmed successfully!",
+  "unknownRoom": "Unknown room",
+  "noImage": "No image"
 }

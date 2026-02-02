@@ -1,0 +1,7 @@
+{
+  "bookSlot": "Réserver un créneau",
+  "start": "Début",
+  "end": "Fin",
+  "confirmBooking": "Confirmer la réservation",
+  "loadingError": "Erreur lors du chargement de la salle"
+}

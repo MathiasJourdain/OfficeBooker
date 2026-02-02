@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Search, Users } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
+import { useTranslations } from "next-intl"
 
 // 1. La fonction de fetch "intelligente" qui accepte des paramètres
 async function fetchFilteredRooms(search: string, minCapacity: number) {
@@ -32,6 +33,8 @@ async function fetchFilteredRooms(search: string, minCapacity: number) {
 }
 
 export function FilteredRoomList() {
+  const t = useTranslations("home")
+  
   // 2. État local pour les filtres
   const [search, setSearch] = useState("")
   const [capacity, setCapacity] = useState(0)
@@ -62,7 +65,7 @@ export function FilteredRoomList() {
         {/* Filtre Recherche */}
         <div className="w-full md:w-1/2 space-y-2">
           <Label className="flex items-center gap-2 text-gray-600">
-            <Search className="w-4 h-4" /> Rechercher une salle
+            <Search className="w-4 h-4" /> {t("searchRoom")}
           </Label>
           <Input 
             placeholder="Ex: Salle Jeff Bezos..." 
@@ -74,7 +77,7 @@ export function FilteredRoomList() {
         {/* Filtre Capacité */}
         <div className="w-full md:w-1/4 space-y-2">
           <Label className="flex items-center gap-2 text-gray-600">
-            <Users className="w-4 h-4" /> Capacité Min.
+            <Users className="w-4 h-4" /> {t("minCapacity")}
           </Label>
           <Input 
             type="number" 
@@ -95,11 +98,11 @@ export function FilteredRoomList() {
             ))}
         </div>
       ) : isError ? (
-        <div className="text-red-500 text-center py-10">Erreur lors du chargement des salles.</div>
+        <div className="text-red-500 text-center py-10">{t("loadingError")}</div>
       ) : (
         <>
             <p className="text-sm text-gray-500 mb-2">
-                {rooms?.length === 0 ? "Aucune salle trouvée." : `${rooms?.length} salle(s) correspondent à vos critères.`}
+                {rooms?.length === 0 ? t("noRoomsFound") : t("roomsFound", { count: rooms?.length || 0 })}
             </p>
             <RoomsGrid rooms={rooms ?? undefined} />
         </>
