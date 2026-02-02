@@ -1,6 +1,7 @@
 import { createClient } from "@/utils/supabase/server"
 import { Logo } from "./header/logo"
 import { AuthControls } from "./header/auth-controls"
+import { LanguageSwitcher } from "@/app/_components/LanguageSwitcher"
 
 export default async function Header() {
   const supabase = await createClient()
@@ -15,6 +16,7 @@ export default async function Header() {
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
         <Logo />
         <div className="flex items-center gap-4">
+          <LanguageSwitcher />
           <AuthControls user={user} displayName={displayName} />
         </div>
       </div>

@@ -1,0 +1,15 @@
+{
+  "title": "Add a new room",
+  "name": "Room name",
+  "nameRequired": "Please provide a room name",
+  "capacity": "Capacity (number of people)",
+  "capacityRequired": "Please provide a valid capacity",
+  "capacityPositive": "Capacity must be greater than zero",
+  "equipment": "Equipment (comma-separated)",
+  "equipmentHint": "Separate equipment with commas",
+  "imageUrl": "Image URL (optional)",
+  "imageUrlInvalid": "Please provide a valid URL",
+  "submit": "Create room",
+  "submitting": "Creating...",
+  "error": "An error occurred"
+}

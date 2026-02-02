@@ -8,9 +8,11 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { useTranslations } from "next-intl"
 
 export function RoomForm() {
   const router = useRouter()
+  const t = useTranslations("roomForm")
 
   const form = useRoomForm()
   const {
@@ -44,12 +46,12 @@ export function RoomForm() {
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
-        <CardTitle>Ajouter une nouvelle salle</CardTitle>
+        <CardTitle>{t("title")}</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div className="space-y-2">
-            <Label htmlFor="name">Nom de la salle *</Label>
+            <Label htmlFor="name">{t("name")} *</Label>
             <Input
               id="name"
               type="text"
@@ -62,7 +64,7 @@ export function RoomForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="capacity">Capacité (nombre de personnes) *</Label>
+            <Label htmlFor="capacity">{t("capacity")} *</Label>
             <Input
               id="capacity"
               type="number"
@@ -76,21 +78,21 @@ export function RoomForm() {
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="equipment">Équipements (séparés par des virgules)</Label>
+            <Label htmlFor="equipment">{t("equipment")}</Label>
             <Input
               id="equipment"
               type="text"
               placeholder="Ex: Projecteur, Tableau blanc, Wifi"
               {...register("equipment")}
             />
-            <p className="text-gray-500 text-xs">Séparez les équipements par des virgules</p>
+            <p className="text-gray-500 text-xs">{t("equipmentHint")}</p>
             {errors.equipment && (
               <p className="text-red-500 text-sm">{errors.equipment.message}</p>
             )}
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="image_url">URL de l'image (optionnel)</Label>
+            <Label htmlFor="image_url">{t("imageUrl")}</Label>
             <Input
               id="image_url"
               type="url"
@@ -104,7 +106,7 @@ export function RoomForm() {
 
           {isError && (
             <div className="bg-red-50 border border-red-200 text-red-800 p-4 rounded-lg">
-              {error?.message || "Une erreur est survenue"}
+              {error?.message || t("error")}
             </div>
           )}
 
@@ -113,7 +115,7 @@ export function RoomForm() {
             disabled={isPending}
             className="w-full bg-blue-600 hover:bg-blue-700"
           >
-            {isPending ? "Création en cours..." : "Créer la salle"}
+            {isPending ? t("submitting") : t("submit")}
           </Button>
         </form>
       </CardContent>

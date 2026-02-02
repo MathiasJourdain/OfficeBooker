@@ -1,0 +1,15 @@
+{
+  "welcome": "Welcome to OfficeBooker",
+  "subtitle": "Book the perfect space for your meetings.",
+  "addRoom": "Add a room",
+  "myBookings": "My Bookings",
+  "login": "Login",
+  "logout": "Logout",
+  "newBooking": "New booking",
+  "back": "Back to home",
+  "rooms": "rooms available",
+  "noRooms": "No rooms found.",
+  "roomsFound": "{count} room(s) match your criteria.",
+  "loading": "Loading...",
+  "error": "Error"
+}

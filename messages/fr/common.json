@@ -1,0 +1,15 @@
+{
+  "welcome": "Bienvenue sur OfficeBooker",
+  "subtitle": "Réservez l'espace idéal pour vos réunions.",
+  "addRoom": "Ajouter une salle",
+  "myBookings": "Mes Réservations",
+  "login": "Connexion",
+  "logout": "Déconnexion",
+  "newBooking": "Nouvelle réservation",
+  "back": "Retour à l'accueil",
+  "rooms": "salles disponibles",
+  "noRooms": "Aucune salle trouvée.",
+  "roomsFound": "{count} salle(s) correspondent à vos critères.",
+  "loading": "Chargement...",
+  "error": "Erreur"
+}

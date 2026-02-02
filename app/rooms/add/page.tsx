@@ -2,15 +2,18 @@ import { RoomForm } from "./_components/RoomForm"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
+import { getTranslations } from "next-intl/server"
 
-export default function AddRoomPage() {
+export default async function AddRoomPage() {
+  const t = await getTranslations("common")
+
   return (
     <div className="min-h-screen bg-gray-50 p-8">
       <div className="max-w-2xl mx-auto">
         <Link href="/">
           <Button variant="ghost" className="mb-6 gap-2">
             <ArrowLeft className="w-4 h-4" />
-            Retour à l'accueil
+            {t("back")}
           </Button>
         </Link>
 

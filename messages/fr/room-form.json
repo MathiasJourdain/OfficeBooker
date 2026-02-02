@@ -1,0 +1,15 @@
+{
+  "title": "Ajouter une nouvelle salle",
+  "name": "Nom de la salle",
+  "nameRequired": "Veuillez fournir un nom de salle",
+  "capacity": "Capacité (nombre de personnes)",
+  "capacityRequired": "Veuillez fournir une capacité valide",
+  "capacityPositive": "La capacité doit être supérieure à zéro",
+  "equipment": "Équipements (séparés par des virgules)",
+  "equipmentHint": "Séparez les équipements par des virgules",
+  "imageUrl": "URL de l'image (optionnel)",
+  "imageUrlInvalid": "Veuillez fournir une URL valide",
+  "submit": "Créer la salle",
+  "submitting": "Création en cours...",
+  "error": "Une erreur est survenue"
+}
