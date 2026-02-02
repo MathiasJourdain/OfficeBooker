@@ -2,7 +2,6 @@ import React from 'react'
 import { render, screen, act, fireEvent } from '@testing-library/react'
 import { vi, describe, beforeEach, afterEach, test, expect } from 'vitest'
 
-// Mock Supabase client (avoid environment setup issues)
 vi.mock('@/utils/supabase/client', () => ({
   createClient: () => ({
     from: () => ({
@@ -17,7 +16,6 @@ vi.mock('@/utils/supabase/client', () => ({
   }),
 }))
 
-// 1. Mock des données
 vi.mock('@tanstack/react-query', () => {
   const localMockRooms = [
     { id: 1, name: 'Salle Alpha', capacity: 4 },
@@ -36,22 +34,18 @@ vi.mock('@tanstack/react-query', () => {
   }
 })
 
-// Mock RoomsGrid to avoid complex dependencies
 vi.mock('../components/home/RoomsGrid', () => ({
   RoomsGrid: ({ rooms }: { rooms: any[] }) => <div data-testid="rooms-grid">{rooms?.length} rooms</div>,
 }))
 
-// Mock Input component
 vi.mock('@/components/ui/input', () => ({
   Input: (props: any) => <input {...props} />,
 }))
 
-// Mock Label component
 vi.mock('@/components/ui/label', () => ({
   Label: (props: any) => <label {...props} />,
 }))
 
-// Mock Skeleton component
 vi.mock('@/components/ui/skeleton', () => ({
   Skeleton: (props: any) => <div data-testid="skeleton" {...props} />,
 }))
