@@ -13,5 +13,22 @@
   "successTitle": "Booking confirmed!",
   "successMessage": "Your time slot has been registered.",
   "close": "Close",
-  "viewBookings": "View my bookings"
+  "viewBookings": "View my bookings",
+  "feed": {
+    "item1": {
+      "author": "Technical Service",
+      "content": "⚠️ The 2nd floor coffee machine is under maintenance until 2 PM.",
+      "date": "10 min ago"
+    },
+    "item2": {
+      "author": "Happiness Manager",
+      "content": "🎉 Afterwork planned this Thursday evening in the Open Space!",
+      "date": "2 hours ago"
+    },
+    "item3": {
+      "author": "System Admin",
+      "content": "The 'Guest' WiFi password will change tomorrow.",
+      "date": "5 hours ago"
+    }
+  }
 }
