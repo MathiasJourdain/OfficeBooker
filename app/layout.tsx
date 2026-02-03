@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import QueryProvider from "@/providers/QueryProvider";
-import { I18nProvider } from "@/providers/I18nProvider";
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,21 +18,20 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Charger les messages en français (statique pour l'instant)
-  const locale = "fr";
-  const messages = (await import(`@/messages`))[locale];
+  // Les messages sont chargés automatiquement via i18n/request.ts (cookie)
+  const messages = await getMessages();
 
   return (
     <html lang="fr">
       <body className={inter.className}>
-        <I18nProvider locale={locale} messages={messages}>
+        <NextIntlClientProvider messages={messages}>
           <QueryProvider>
             <Header />
             <main>
               {children}
             </main>
           </QueryProvider>
-        </I18nProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
