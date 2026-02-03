@@ -5,7 +5,7 @@ import { SubmitButton } from "@/components/submit-button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "@/providers/I18nProvider"
 
 export function SignupForm() {
   const t = useTranslations("login")

@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CalendarDays, LogIn, LogOut, User } from "lucide-react"
 import { signOut } from "@/app/login/actions"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "@/providers/I18nProvider"
 
 export function AuthControls({ user, displayName }: { user?: any; displayName?: string }) {
   const t = useTranslations("common")

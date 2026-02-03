@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Search, Users } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "@/providers/I18nProvider"
 
 // 1. La fonction de fetch "intelligente" qui accepte des paramètres
 async function fetchFilteredRooms(search: string, minCapacity: number) {

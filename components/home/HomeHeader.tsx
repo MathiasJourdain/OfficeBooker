@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "@/providers/I18nProvider"
 
 export function HomeHeader() {
   const t = useTranslations("common")

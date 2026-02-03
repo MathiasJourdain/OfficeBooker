@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { Bell, Info, AlertTriangle } from "lucide-react"
 import { Skeleton } from "@/components/ui/skeleton"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "@/providers/I18nProvider"
 
 // 1. La fonction qui va chercher les données sur ton API
 const fetchFeed = async () => {

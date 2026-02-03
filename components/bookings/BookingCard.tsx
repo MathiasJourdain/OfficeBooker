@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Calendar, Clock, Trash2 } from "lucide-react"
 import { cancelBooking } from "@/app/my-bookings/actions"
 import Link from "next/link"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "@/providers/I18nProvider"
 
 export function BookingCard({ booking }: { booking: any }) {
   const t = useTranslations("booking")

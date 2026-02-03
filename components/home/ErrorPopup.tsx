@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { AlertTriangle } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "@/providers/I18nProvider"
 
 export function ErrorPopup({ message }: { message: string }) {
   const t = useTranslations("home")
