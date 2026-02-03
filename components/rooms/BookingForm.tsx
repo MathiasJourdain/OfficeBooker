@@ -4,7 +4,7 @@ import { bookRoom } from "@/app/rooms/[id]/actions"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { CardHeader, CardContent, CardTitle } from "@/components/ui/card"
-import { useTranslations } from "@/providers/I18nProvider"
+import { useTranslations } from "next-intl"
 
 export function BookingForm({ room }: { room: any }) {
   const t = useTranslations("rooms")

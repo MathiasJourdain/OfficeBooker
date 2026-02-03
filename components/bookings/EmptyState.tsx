@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { useTranslations } from "@/providers/I18nProvider"
+import { useTranslations } from "next-intl"
 
 export function EmptyState() {
   const t = useTranslations("booking")

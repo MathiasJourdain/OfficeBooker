@@ -1,6 +1,6 @@
 "use client"
 
-import { useLocale } from "@/providers/I18nProvider"
+import { useLocale } from "next-intl"
 import { useRouter } from "next/navigation"
 import { LOCALES, type Locale } from "@/messages"
 import { Button } from "@/components/ui/button"

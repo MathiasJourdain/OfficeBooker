@@ -2,7 +2,7 @@
 
 import { useRoomsSuspenseQuery } from "../_hooks/queries/useRoomsSuspenseQuery"
 import { RoomsGrid } from "@/components/home/RoomsGrid"
-import { useTranslations } from "@/providers/I18nProvider"
+import { useTranslations } from "next-intl"
 
 interface RoomsListProps {
   search?: string

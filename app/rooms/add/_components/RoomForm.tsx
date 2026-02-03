@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
-import { useTranslations } from "@/providers/I18nProvider"
+import { useTranslations } from "next-intl"
 
 export function RoomForm() {
   const router = useRouter()
